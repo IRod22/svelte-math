@@ -4,9 +4,14 @@
      */
     export let selected
     /**
+     * @type {(selected: string) => void}
+    */
+    export let select
+    /**
      * @type {string[]}
      */
     export let options
+    $: select(selected)
 </script>
 
 <select bind:value={selected}>

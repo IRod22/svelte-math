@@ -31,15 +31,15 @@
      */
     function setA(newA) {
         a = newA
+        onchange(funOp(a, b))
     }
     /**
      * @param {(x: number) => number} newB
      */
     function setB(newB) {
         b = newB
+        onchange(funOp(a, b))
     }
-
-    $: onchange(funOp(a, b))
 </script>
 
 <span>
