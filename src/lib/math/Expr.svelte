@@ -32,7 +32,7 @@
 </script>
 
 <span>
-    &lt;&lt;
+    [
 {#if state == '#'}
     <Dropdown selected = {state} select = {updateState} options = {states}/> <Numeric onchange = {onchange}/>
 {:else if state == '+' || state == '--' || state == '*' || state == '/'}
@@ -45,5 +45,5 @@
 {:else}
     <Dropdown selected = {state} select = {updateState} options = {states}/>
 {/if}
-&gt;&gt;
+    ]
 </span>

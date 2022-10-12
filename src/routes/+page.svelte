@@ -9,4 +9,4 @@
     $: y = f(x)
 </script>
 
-<p>Where x = <Counter onchange = {newX => (x = newX)}/>, y = <Expr onchange = {newF => (f = newF)}/> = {y}</p>
+<p>Where f(x) = <Expr onchange = {newF => (f = newF)}/>, f(<Counter onchange = {newX => (x = newX)}/>) = {y}</p>
