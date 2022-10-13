@@ -1,22 +1,19 @@
 <script>
+// @ts-nocheck
+
+	import { writable } from 'svelte/store'
 	/**
 	 * @type {(count: number) => void}
 	 */
 	export let onchange
-	let count = 0
-	onchange(count)
-	function incr() {
-		count++
-		onchange(count)
-	}
-	function decr() {
-		count--
-		onchange(count)
-	}
+	let count = writable(0)
+	count.subscribe(() => {
+		onchange($count)
+	})
 </script>
 
 <span class="counter">
-	<button on:click={incr}>+</button>
-	{count}
-	<button on:click={decr}>-</button>
+	<button on:click={() => $count++}>+</button>
+	{$count}
+	<button on:click={() => $count--}>-</button>
 </span>
